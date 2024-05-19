@@ -2,13 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-
-*{
+* {
   font-family: Arial, Helvetica, sans-serif;
 }
-::selection{
+::selection {
   color: gold;
 }
-body{
+body {
   overflow: hidden;
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(71 85 105 / 0.35);
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(17 24 39);
+  width: 2px;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3d3e47;
 }
