@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import CardButtons from "./CardButtons";
 import { DoneBtnContext } from "../contexts/DoneBtnContext";
 
-function Card({ refrence, data, index, TodosArr}) {
+function Card({ refrence, data, index, TodosArr, reRenState}) {
   const [checked, setchecked] = useState(false);
   return (
     <DoneBtnContext.Provider value={[checked, setchecked]}>
@@ -26,7 +26,7 @@ function Card({ refrence, data, index, TodosArr}) {
             {data.Task}
           </p>
         </div>
-        <CardButtons index={index} TodosArr={TodosArr}/>
+        <CardButtons index={index} TodosArr={TodosArr} reRenState={reRenState}/>
       </motion.div>
     </DoneBtnContext.Provider>
   );

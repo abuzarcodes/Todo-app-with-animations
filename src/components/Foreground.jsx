@@ -35,6 +35,7 @@ function Foreground() {
               TodosArr={todos}
               index={index}
               key={item.id}
+              reRenState={setNewTodo}
             />
           ))}
           <AddTodoBtn />
