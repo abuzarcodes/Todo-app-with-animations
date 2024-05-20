@@ -1,20 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import TodoFormInput from "./TodoFormInput";
-import SubmitTodoFormBtn from "./SubmitTodoFormBtn";
+import { IoIosCloseCircle } from "react-icons/io";
+import { AddTodoForm } from "../contexts/AddTodoFormContext";
 
 function AddTodoFormCard() {
+  const [, setShowTodoForm] = useContext(AddTodoForm);
   return (
     <div className=" formCard flex justify-center items-center p-8 bg-gray-800 rounded-2xl w-[80vw] lg:w-[65vw] lg:h-[50%] h-[35%] text-gray-300 relative">
-      <form className="w-full ">
-        <label
-          className="tracking-tighter md:text-[4vw] text-[30px]"
-          htmlFor="Todo"
-        >
-          Add a Todo.
-        </label>
-        <TodoFormInput/>
-        <SubmitTodoFormBtn/>
-      </form>
+      <span
+        className="absolute top-0 right-0 m-5 text-[40px] cursor-pointer"
+        onClick={() => {
+          setShowTodoForm(false);
+        }}
+      >
+        <IoIosCloseCircle />
+      </span>
+      <TodoFormInput />
     </div>
   );
 }

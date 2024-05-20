@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import CardButtons from "./CardButtons";
 import { DoneBtnContext } from "../contexts/DoneBtnContext";
 
-function Card({ refrence, data }) {
+function Card({ refrence, data, index, TodosArr}) {
   const [checked, setchecked] = useState(false);
   return (
     <DoneBtnContext.Provider value={[checked, setchecked]}>
@@ -23,10 +23,10 @@ function Card({ refrence, data }) {
               checked ? "line-through" : ""
             }`}
           >
-            {data.task}
+            {data.Task}
           </p>
         </div>
-        <CardButtons />
+        <CardButtons index={index} TodosArr={TodosArr}/>
       </motion.div>
     </DoneBtnContext.Provider>
   );
