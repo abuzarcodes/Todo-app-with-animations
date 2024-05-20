@@ -28,7 +28,7 @@ function TodoFormInput() {
         type="submit"
         value="Add"
         onClick={() => {
-          setTodoObj({ Task: Todo, id: Date.now() });
+          setTodoObj({ Task: Todo, id: Date.now(), done: false });
           setShowTodoForm(false)
         }}
       />
