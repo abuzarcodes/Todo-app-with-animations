@@ -1,19 +1,20 @@
 import React, { useContext } from "react";
-import { MdEdit } from "react-icons/md";
+import { IoIosSave } from "react-icons/io";
 import { EditTodoContext } from "../contexts/EditTodoContext";
 
-function EditButton({ reRenState }) {
+function EditedTodoSaveBtn({ reRenState, TodosArr }) {
   const [Editing, setEditing] = useContext(EditTodoContext);
   return (
     <span
       className="text-[40px]"
       onClick={() => {
-        setEditing(true);
+        localStorage.setItem("todos", JSON.stringify(TodosArr));
+        setEditing(false);
       }}
     >
-      <MdEdit />
+      <IoIosSave />
     </span>
   );
 }
 
-export default EditButton;
+export default EditedTodoSaveBtn;
